@@ -4,10 +4,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      href="/css/main.min.css"
       rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <title>Net Ninja Pro - the Book</title>
@@ -70,9 +68,19 @@
             </h1>
             <p class="lead my-4 text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus blanditiis fugit qui, libero nostrum dolores facere dolor voluptas animi molestiae quaerat expedita, eum, aut iure. Quis doloremque quam asperiores libero!</p>
             <a href="#pricing" class="btn btn-secondary btn-lg">Buy Now</a>
+            <!-- open sidebar / offcanvas -->
+            <a href="#sidebar" class="d-block mt-3" data-bs-toggle="offcanvas" role="button" aria-controls="sidebar">
+              Explore my other books
+            </a>
+
+
           </div>
           <div class="col-md-5 text-center d-none d-md-block">
-            <img class="img-fluid" src="/assets//ebook-cover.png" alt="ebook ebook-cover">
+            <!-- tootip -->
+            <span class="tt" data-bs-placement="bottom" title="Net Ninja Book COVER">
+              <img class="img-fluid" src="/assets//ebook-cover.png" alt="ebook ebook-cover">
+            </span>
+
           </div>
         </div>
       </div>
@@ -220,10 +228,10 @@
     </section>
 
     <!-- reviews list -->
-    <section id="reviews" class="bg-light">
+    <section id="reviews" class="bg-altlight">
       <div class="container-lg">
         <div class="text-center">
-          <h2><i class="bi bi-stars"></i> Book Reviews</h2>
+          <h2><i class="bi bi-stars text-altdark"></i> Book Reviews</h2>
           <p class="lead">What my students have said about the book...</p>
         </div>
 
@@ -232,11 +240,11 @@
             <div class="list-group">
               <div class="list-group-item py-3">
                 <div class="pb-2">
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
-                  <i class="bi bi-star-fill"></i>
+                  <i class="bi bi-star-fill text-altdark"></i>
+                  <i class="bi bi-star-fill text-altdark"></i>
+                  <i class="bi bi-star-fill text-altdark"></i>
+                  <i class="bi bi-star-fill text-altdark"></i>
+                  <i class="bi bi-star-fill text-altdark"></i>
                 </div>
                 <h5 class="mb-1">A must buy for every aspiring web dev</h5>
                 <p class="mb-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus error sint illo cum, laborum praesentium eius consectetur molestiae distinctio at odio placeat necessitatibus nemo ullam eum, esse, omnis exercitationem eaque.</p>
@@ -320,6 +328,13 @@
                   <i class="bi bi-envelope-fill"></i>
                 </span>
                 <input type="email" class="form-control" id="email" placeholder="e.g. mario@example.com">
+                <!-- tooltip -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="button" title="Enter an email address we can reply to.">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+
               </div>
 
               <label for="name" class="form-label">Name:</label>
@@ -328,6 +343,13 @@
                   <i class="bi bi-person-circle"></i>
                 </span>
                 <input type="text" class="form-control" id="name" placeholder="e.g. Mario">
+                <!-- tooltip -->
+                <span class="input-group-text">
+                  <span class="tt" data-bs-placement="button" title="Pretty self explanatory really...">
+                    <i class="bi bi-question-circle text-muted"></i>
+                  </span>
+                </span>
+
               </div>
 
               <label for="subject" class="form-label">What is your question about?</label>
@@ -360,11 +382,79 @@
 
     <!-- get updates / modal trigger -->
 
+    <section class="bg-light">
+      <div class="container">
+        <div class="text-center">
+          <h2>Stay in The Loop</h2>
+          <p class="lead">Get the latest updates as they happen...</p>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col md-8 text-center">
+            <p class="text-muted my-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt quam, dolore consectetur natus ut tempora impedit, iure quos harum aliquid atque beatae voluptatem temporibus dolor! Placeat consequuntur consectetur officia explicabo.</p>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reg-modal">
+              Register for Updates
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- modal itself -->
+
+    <div class="modal fade" id="reg-modal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Get the Latest Updates</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut aliquam facere, maiores nisi dolorem provident excepturi. Maiores eligendi architecto labore, illo nisi quaerat quasi enim hic, aspernatur vel aliquam vero!</p>
+            <label for="modal-email" class="form-label">Your email address:</label>
+            <input type="email" class="form-control" id="modal-email" placeholder="e.g.mario@example.com">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- offcanvas -->
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebar-label">My Other Books</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero earum natus aspernatur harum adipisci sint, labore at nam soluta cumque culpa. Natus consectetur quod qui, sequi quo expedita provident voluptates.</p>
+        <!-- dropdown -->
+        <div class="dropdown mt-3">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="book-dropdown" data-bs-toggle="dropdown">
+            Choose a book title
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+            <li><a href="#" class="dropdown-item">Become a React Superhero</a></li>
+            <li><a href="#" class="dropdown-item">Conquering Vue.js</a></li>
+            <li><a href="#" class="dropdown-item">Levelling up Your Next.js</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const tooltips = documnet.querySelectorAll('.tt')
+      tooltips.forEach(t => {
+        new bootstrap.Tooltip(t)
+      })
+    </script>
   </body>
 </html>
